@@ -1,28 +1,36 @@
-package lk.signalfusion.mobile.domain.model
+﻿package lk.signalfusion.mobile.domain.model
 
 data class CellularTelemetry(
-    val operator: String, // Dialog, SLT-Mobitel, Airtel, Hutch
+    val operator: String = "Dialog", // Dialog, SLT-Mobitel, Airtel, Hutch
     val mcc: String = "413",
-    val mnc: String,
-    val networkGeneration: String, // 4G LTE, 5G NR
-    val signalDbm: Int,
+    val mnc: String = "02",
+    val networkGeneration: String = "5G NR", // 4G LTE, 5G NR, 3G HSPA
+    val signalDbm: Int = -83,
     // 4G LTE Metrics
-    val lteRsrp: Int? = null,
-    val lteRsrq: Int? = null,
-    val lteSinr: Int? = null,
-    val lteRssi: Int? = null,
+    val lteRsrp: Int? = -88,
+    val lteRsrq: Int? = -11,
+    val lteSinr: Int? = 16,
+    val lteRssi: Int? = -62,
     // 5G NR Metrics
-    val ssRsrp: Int? = null,
-    val ssRsrq: Int? = null,
-    val ssSinr: Int? = null,
-    val csiRsrp: Int? = null,
-    val csiRsrq: Int? = null,
-    val csiSinr: Int? = null,
+    val ssRsrp: Int? = -83,
+    val ssRsrq: Int? = -10,
+    val ssSinr: Int? = 19,
+    val csiRsrp: Int? = -85,
+    val csiRsrq: Int? = -9,
+    val csiSinr: Int? = 21,
     // Cell info
-    val cellId: Long? = null,
-    val pci: Int? = null,
-    val tac: Int? = null,
-    val earfcn: Int? = null,
+    val cellId: Long? = 4130289,
+    val pci: Int? = 246,
+    val tac: Int? = 5012,
+    val earfcn: Int? = 1650,
     val simSlotIndex: Int = 0,
+    val sim1Operator: String = "Dialog Axiata",
+    val sim2Operator: String? = "SLT-Mobitel",
+    val latencyMs: Int = 18,
+    val jitterMs: Int = 3,
+    val packetLossPct: Double = 0.0,
+    val downloadSpeedMbps: Double = 142.8,
+    val uploadSpeedMbps: Double = 48.2,
+    val healthScore: Int = 94,
     val timestamp: Long = System.currentTimeMillis()
 )
