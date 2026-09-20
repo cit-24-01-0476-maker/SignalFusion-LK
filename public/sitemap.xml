@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://signalfusion.lk/</loc><priority>1.0</priority></url>
+  <url><loc>https://signalfusion.lk/speedtest</loc><priority>0.9</priority></url>
+  <url><loc>https://signalfusion.lk/map</loc><priority>0.9</priority></url>
+  <url><loc>https://signalfusion.lk/compare</loc><priority>0.8</priority></url>
+  <url><loc>https://signalfusion.lk/network-lab</loc><priority>0.8</priority></url>
+  <url><loc>https://signalfusion.lk/mobile</loc><priority>0.8</priority></url>
+  <url><loc>https://signalfusion.lk/desktop</loc><priority>0.8</priority></url>
+  <url><loc>https://signalfusion.lk/download</loc><priority>0.9</priority></url>
+  <url><loc>https://signalfusion.lk/dashboard</loc><priority>0.7</priority></url>
+  <url><loc>https://signalfusion.lk/technology</loc><priority>0.7</priority></url>
+  <url><loc>https://signalfusion.lk/how-it-works</loc><priority>0.7</priority></url>
+  <url><loc>https://signalfusion.lk/status</loc><priority>0.6</priority></url>
+  <url><loc>https://signalfusion.lk/releases</loc><priority>0.7</priority></url>
+  <url><loc>https://signalfusion.lk/docs</loc><priority>0.7</priority></url>
+  <url><loc>https://signalfusion.lk/support</loc><priority>0.6</priority></url>
+  <url><loc>https://signalfusion.lk/privacy</loc><priority>0.5</priority></url>
+  <url><loc>https://signalfusion.lk/terms</loc><priority>0.5</priority></url>
+  <url><loc>https://signalfusion.lk/about</loc><priority>0.6</priority></url>
+</urlset>
