@@ -1,0 +1,26 @@
+﻿/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: false,
+  async rewrites() {
+    return [
+      {
+        source: '/api/v1/:path*',
+        destination: 'http://127.0.0.1:8000/api/v1/:path*',
+      },
+      {
+        source: '/speedtest/:path*',
+        destination: 'http://127.0.0.1:8001/speedtest/:path*',
+      },
+      {
+        source: '/docs',
+        destination: 'http://127.0.0.1:8000/docs',
+      },
+      {
+        source: '/openapi.json',
+        destination: 'http://127.0.0.1:8000/openapi.json',
+      }
+    ];
+  },
+};
+
+module.exports = nextConfig;
