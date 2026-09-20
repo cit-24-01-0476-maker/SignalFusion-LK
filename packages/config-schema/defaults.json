@@ -1,0 +1,50 @@
+{
+  "version": "1.4.0",
+  "updatedAt": "2026-09-20T11:00:00Z",
+  "featureFlags": {
+    "enable5GSurvey": true,
+    "enableHighSpeedTest": true,
+    "enableWebRtcPacketLoss": true,
+    "enableAntiDropPrediction": true,
+    "enableLiveCompanionMode": true
+  },
+  "speedTest": {
+    "quickDownloadMb": 20,
+    "standardDownloadMb": 60,
+    "highSpeedDownloadMb": 180,
+    "maxDurationSeconds": 15,
+    "warmupDurationSeconds": 2
+  },
+  "signalThresholds": {
+    "excellentDbm": -80,
+    "goodDbm": -95,
+    "fairDbm": -108,
+    "poorDbm": -120
+  },
+  "supportedOperators": [
+    "Dialog",
+    "SLT-Mobitel",
+    "Airtel",
+    "Hutch"
+  ],
+  "activeNodes": [
+    {
+      "id": "cmbo-01",
+      "name": "Colombo Node 1",
+      "city": "Colombo",
+      "country": "Sri Lanka",
+      "host": "localhost",
+      "port": 8001,
+      "isHealthy": true
+    },
+    {
+      "id": "cmbo-02",
+      "name": "Colombo Node 2 (Backup)",
+      "city": "Colombo",
+      "country": "Sri Lanka",
+      "host": "localhost",
+      "port": 8002,
+      "isHealthy": true
+    }
+  ]
+}

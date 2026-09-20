@@ -1,0 +1,68 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: ../../services/api
+      dockerfile: Dockerfile
+    container_name: signalfusion-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://sfuser:sfpassword@postgres:5432/signalfusion
+      - REDIS_URL=redis://redis:6379/0
+      - ENVIRONMENT=production
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+
+  speedtest-node-1:
+    build:
+      context: ../../services/speedtest-node
+      dockerfile: Dockerfile
+    container_name: signalfusion-speednode-cmbo-01
+    ports:
+      - "8001:8001"
+    environment:
+      - NODE_ID=cmbo-01
+      - NODE_NAME=Colombo Node 1 (Primary)
+    restart: unless-stopped
+
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: signalfusion-postgres
+    environment:
+      POSTGRES_USER: sfuser
+      POSTGRES_PASSWORD: sfpassword
+      POSTGRES_DB: signalfusion
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: signalfusion-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ../../apps/web
+      dockerfile: Dockerfile
+    container_name: signalfusion-web
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api
+      - NEXT_PUBLIC_SPEEDTEST_NODE=http://localhost:8001
+      - NEXT_PUBLIC_WS_REALTIME=ws://localhost:8000/v1/realtime
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  pgdata:

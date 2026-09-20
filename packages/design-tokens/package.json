@@ -1,0 +1,6 @@
+{
+  "name": "@signalfusion/design-tokens",
+  "version": "1.0.0",
+  "main": "./tokens.ts",
+  "types": "./tokens.ts"
+}
